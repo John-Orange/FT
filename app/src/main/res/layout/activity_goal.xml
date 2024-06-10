@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GoalActivity">
+
+    <TextView
+        android:id="@+id/tvSetGoalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Your Goals"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/etGoal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter your goal"
+        android:padding="10dp"
+        android:layout_below="@id/tvSetGoalTitle"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etGoal"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:timePickerMode="spinner"/>
+
+    <Button
+        android:id="@+id/btnSaveGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Goal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/timePicker"
+        android:layout_marginTop="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSaveGoal"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/llGoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+    </ScrollView>
+</RelativeLayout>
