@@ -13,13 +13,32 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
 
+    <ImageView
+        android:id="@+id/imageRunning"
+        android:layout_width="339dp"
+        android:layout_height="196dp"
+        android:layout_below="@id/tvTrackTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@drawable/running"
+        android:src="@drawable/running" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageRunning"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:format="Time: %s" />
+
     <Button
         android:id="@+id/btnStartTracking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Tracking"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvTrackTitle"
+        android:layout_below="@id/chronometer"
         android:layout_marginTop="20dp"/>
 
     <Button
@@ -41,21 +60,14 @@
         android:layout_below="@id/btnStopTracking"
         android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:id="@+id/tvElapsedTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Elapsed Time: 0 min"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvTrackStatus"
-        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tvCaloriesBurned"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calories Burned for Running: 0"
+        android:text="Calories Burned: 0"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvElapsedTime"
+        android:layout_below="@+id/tvTrackStatus"
         android:layout_marginTop="20dp"/>
 </RelativeLayout>
+

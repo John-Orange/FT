@@ -1,5 +1,6 @@
 package com.app.ft
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -12,6 +13,7 @@ class BMIActivity : AppCompatActivity() {
     private lateinit var etHeight: EditText
     private lateinit var etWeight: EditText
     private lateinit var tvBmiResult: TextView
+    private lateinit var btnTrackActivity: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +23,21 @@ class BMIActivity : AppCompatActivity() {
         etWeight = findViewById(R.id.etWeight)
         tvBmiResult = findViewById(R.id.tvBmiResult)
         val btnCalculateBmi: Button = findViewById(R.id.btnCalculateBmi)
+        btnTrackActivity = findViewById(R.id.btnTrackActivity)
 
         btnCalculateBmi.setOnClickListener {
             calculateBmi()
+        }
+
+        btnTrackActivity.setOnClickListener {
+            val weightStr = etWeight.text.toString()
+            if (weightStr.isNotEmpty()) {
+                val intent = Intent(this, TrackActivity::class.java)
+                intent.putExtra("userWeightKg", weightStr.toFloat())
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please enter your weight", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

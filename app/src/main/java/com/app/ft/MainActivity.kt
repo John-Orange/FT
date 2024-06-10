@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
         val btnBmiCalculator: Button = findViewById(R.id.btnBmiCalculator)
         val btnGoalActivity: Button = findViewById(R.id.btnGoalActivity)
 
-        btnTrackActivity.setOnClickListener {
-            val intent = Intent(this, TrackActivity::class.java)
+        btnBmiCalculator.setOnClickListener {
+            val intent = Intent(this, BMIActivity::class.java)
             startActivity(intent)
         }
 
-        btnBmiCalculator.setOnClickListener {
-            val intent = Intent(this, BMIActivity::class.java)
+        btnTrackActivity.setOnClickListener {
+            val intent = Intent(this, TrackActivity::class.java)
             startActivity(intent)
         }
 

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BmiActivity">
+    tools:context=".BMIActivity">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -52,4 +52,17 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btnCalculateBmi"
         android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnTrackActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Track Activity"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvBmiResult"
+        android:layout_marginTop="20dp"/>
+
+
 </RelativeLayout>
+
+
