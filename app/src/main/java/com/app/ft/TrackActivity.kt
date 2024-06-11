@@ -60,25 +60,23 @@ class TrackActivity : AppCompatActivity() {
     private fun stopTracking() {
         chronometer.stop()
         val elapsedTime = SystemClock.elapsedRealtime() - startTime
-        val minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedTime)
-        val caloriesBurned = calculateCaloriesBurned(minutes)
+        val seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedTime)
+        val caloriesBurned = calculateCaloriesBurned(seconds)
         tvTrackStatus.text = "Status: Not Tracking"
         tvCaloriesBurned.text = "Calories Burned: $caloriesBurned"
     }
 
-    private fun calculateCaloriesBurned(minutes: Long): Double {
-        // Calculate BMI
+    private fun calculateCaloriesBurned(seconds: Long): Double {
         val heightMeters = userHeightCm / 100
         val bmi = userWeightKg / (heightMeters * heightMeters)
-        val baseCalorieBurnRate = 0.1
+        val baseCalorieBurnRate = 0.1 / 60
         val bmiAdjustmentFactor = when {
-            bmi < 18.5 -> 0.9 // Underweight
+            bmi < 18.5 -> 0.9
             bmi in 18.5..24.9 -> 1.0
             bmi in 25.0..29.9 -> 1.1
             else -> 1.2
         }
 
-        return minutes * baseCalorieBurnRate * bmiAdjustmentFactor * userWeightKg
+        return seconds * baseCalorieBurnRate * bmiAdjustmentFactor * userWeightKg
     }
 }
-
